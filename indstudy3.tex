@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+
+
+
+\usepackage[all]{xy}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{amsmath}
+\pagestyle{fancyplain}
+
+\begin{document}
+
+\lhead{Frederick Robinson} 
+\rhead{Independent Study}
+
+
+
+\title{May / AGP}
+\author{Frederick Robinson}
+\date{18 May 2010}
+\maketitle
+
+
+\section*{May Chapter 16}
+\section{Question 3}
+Let $p : Y \to X$ be a covering space with finite fibers, say of cardinality $n$. Using singular chains, construct a homomorphism $t : H_* (X; A) \to H_*(Y; A)$ such that the composite $p_* \circ t : H _* (X; A) \to H_* (X;A)$ is multiplication by $n$; $t$ is called a ``transfer homomorphism."
+\subsection{Answer}
+We let $t$ be the chain map given by sending a map $f: \Delta \to X$ to the sum of maps $g: \delta \to Y$ where $p \circ g = f$ for each $g$, and $g$ has image each lift of $f$.
+
+This satisfies the required property, if it works. We need to verify that a covering map is a fibration to show that it works. In particular, we'd like to be able to show the homotopy lifting property for $p: Y\to X$.
+
+However, by a theorem in May (page 51) it suffices to check that it is a fibration on a basis of open sets. By definition of covering space, there is a basis $\{U _ \alpha\}$ of  $X$ such that every $p^{-1}(U_i)$ is (homeomorphic to) $n$ disjoint copies of $U$. Thus, we have the lifting property we need for $p$ to be a fibration -- just lift via the homeomorphism. 
+
+
+%\section{Question}Prove that the May definition and the Hatcher definition of singular homology are equivalent\subsection{Answer}
+
+\section*{Aguilar, Gitler and Prieto 5.2}
+\section{Question 3}
+Let $\lambda$ be a partially ordered set of indices and let $X_\lambda, \lambda \in \Lambda $, be pointed spaces that if $\lambda \leq \mu$, then $X_ \lambda \subset X_\mu$ is  a closed subset. Prove that if $X = \bigcup_\lambda X_\lambda$ has the union topology, then, for each $n$, $\bigcup_\lambda$SP$^n X_ \lambda = $ SP$^n X$.
+\subsection{Answer}
+
+
+
+So, we's like to show that
+\[ \bigcup_\lambda \left( \overline{X}_\lambda^n / \Sigma_n \right) = \overline{\bigcup_\lambda X_\lambda}^n / \Sigma_n\]
+
+
+
+We will show that the two are homeomorphic via the natural map. This map is a bijection, henc it suffices to show that it takes open sets to open sets, as does its inverse.
+
+
+Let $V$ be an open set in the LHS. Unwinding definitions, this means that there is a consistent sequence of open sets, say $V_\lambda \subset \overline{X}_\lambda^n / \Sigma_n  $ for  $\lambda \in \Lambda$. 
+
+
+
+The fact that these sets are open means that in each $X_\lambda^n$, the preimage of $V_\lambda$, pulling back under the permutation say $V_\lambda'$, is an open set.
+
+Now, look at $V$ under the natural map, taking it to the RHS. We first take the union of $V_\lambda'$. This is open, since it is a consistent sequence of open sets. Modding out by $\Sigma_n$ we still have an open set: By construction the set we start out with (before modding out) is closed under permutation, and open topologically, thus when we mod out we have a set whose preimage is open.
+
+Now, we must show the reverse inclusion. Suppose $V$ is an open set in the RHS. This means that the preimage of $V$ in $ \overline{\bigcup_\lambda X_\lambda}^n $, say $V'$ is open. That is, there is some open consistent sequence of $V'_\lambda$ each in $X_\lambda$ whose union is our $V'$.
+
+Taking this to the LHS, we have an open set. Each $V'_\lambda$, having been created so as to respect $\Sigma_n$ in the limit must perforce respect $\Sigma_n$ in each restriction to $X_\lambda$. Then, since we have a union of open sets, the set is open in the limit.
+
+
+
+
+
+
+\section{Question 6}
+Prove that the alternative definition of SP $X$ , given in the previous note, in fact agrees with Definition 5.2.1. 
+\subsection{Answer}
+
+
+
+
+\[\bigoplus X / \Sigma_\infty = \bigcup_n (\overline{X}^n / \Sigma_n) \]
+
+
+Explicitly, construct the `natural map' by pulling back an element $x$ of the LHS to a set of sequences in $X$. Then, restricting this set to the first $n$ components, and modding out by $\Sigma_n$, we get a set  in SP $^n X$.  In the limit, we have an element of SP $X$, the image of the element we started with on the LHS.
+
+
+The natural map is a bijection, so it suffices to show, as above that it preserves open sets, as does its inverse.
+
+Let $V$ open in the LHS. Then, its preimage in $\bigoplus X$ is an open set of sequences, closed under the operation of permuting finitely many members. Call this set $V'$. The image of $V$ in the RHS under the natural maps is just the sequence of $V_\lambda$, where a $V_ \lambda$ is the restriction of $V'$ to the first $n$ places,  modded out by the permutation operation. Since $V'$ is closed under finite permutation, and open topologically, each $V_\lambda$ is open. Hence, the image in the RHS is open.
+
+Now, if we fix an open set in the RHS. We wish to show that taking it to the LHS via the inverse of the natural map gives us an open set. Our set is a sequence of consistent open sets in the $=\overline{X}^n / \Sigma_n$, which pulls back under permuations to a sequence of open sets in $X^n$ which are closed under permutation, and consistent. Therefore, the inverse  of the natural map applied to this set takes it to an open set: A set is open in the LHS if it restricts to an open set in every $X^n$. 
+
+
+
+
+\end{document}

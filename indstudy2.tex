@@ -1,0 +1,130 @@
+\documentclass[11pt]{article}
+
+
+
+\usepackage[all]{xy}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{amsmath}
+\pagestyle{fancyplain}
+
+\begin{document}
+
+\lhead{Frederick Robinson}
+\rhead{Independent Study}
+
+
+
+\title{Hatcher}
+\author{Frederick Robinson}
+\date{14 February 2010}
+\maketitle
+
+
+\section*{Hatcher 2.2}
+\section{Question 4}
+\subsection{Question}
+Construct a surjective map $S^n \to S^n$ of degree zero, for each $n \geq 1$.
+\subsection{Answer}
+For $S^1$ we can demonstrate such a map explicitly by
+\[\varphi(\theta) = \left\{ \begin{array}{ll} 2 \theta & \theta \leq \pi \\ -2 \theta & \theta > \pi \end{array} \right.\]
+where $S^1$ is coordinatized by $0 \leq \theta< 2\pi$ in the usual polar way.
+
+To get such a map for $S^n$, consider $S^n$ as $S^{n-1} \times [0,1]$ modulo the association of $S^{n-1} \times 0$ and $S^{n-1} \times 1$ to points. Then, we have a map on $S^n$ induced by one on $S^{n-1}$. The $S^1$ map induces the required on on $S^2$ and so on.
+
+
+
+\section{Question 9}
+\subsection{Question}
+Compute the homology groups of the following 2-complexes:
+\begin{enumerate}
+\item The quotient of $S^2$ obtained by identifying the north and south poles to a point.
+\item $S^1 \times (S^1 \vee S^1)$.
+\item The space obtained from $D^2$ by first deleting the interiors of two disjoint subdisks in the interior of $D^2$ and then identifying all three resulting boundary circles together via homeomorphisms preserving clockwise orientations of these circles. 
+\item The quotient space of $S^1 \times S^1$ obtained by identifying points in the circle $S^1 \times \{x_0\}$ that differ by $2 \pi / m $ rotation and identifying points in the circle $\{x_0\} \times S^1$ that differ by $2 \pi / n$ rotation.
+\end{enumerate}
+\subsection{Answer}
+\begin{enumerate}
+\item We can create a CW approximation with 1 0-cell, 1 1-cell, and 1 2-cell. Associate the 1-cell to the 0-cell, to form a loop, then associate the 2 cell to the 1 cell twice around its boundary, in one direction, then the other. (The 1-cell goes from the north pole to the south pole of $S^2$ before our association.)
+
+Now, observe that the chain complex is just 
+\[\mathbb{Z} \stackrel{\partial_0}{\leftarrow} \mathbb{Z} \stackrel{\partial_1}{\leftarrow} \mathbb{Z} \leftarrow 0 \leftarrow \cdots\]
+with $\partial_0$ the 0 map, since the north and south poles are associated, and $\partial_1$ the zero map as well, as the boundary traverses the 1-cell in one direction then the other, and is therefore nullhomotopic.
+
+Therefore, we have
+\[H_n(X) = \left\{ \begin{array}{ll} \mathbb{Z} & n = 0,1,2 \\ 0& \mbox{otherwise} \end{array} \right.\]
+\item We write
+\[S^1 \times (S^1 \vee S^1) = S^1 \times S^1 \cup_{S^1} S^1 \times S^1) = T^2 \cup_{S_1} T^2.\]
+Now, we represent this as a CW complex with 1 0-cell, 3 1-simpleces, and 2 2-simpleces. So we have 
+\[\mathbb{Z} \stackrel{\partial_0}{\leftarrow} \mathbb{Z}^3 \stackrel{\partial_1}{\leftarrow} \mathbb{Z}^2 \leftarrow 0 \leftarrow \cdots\]
+with $\partial_0 =0 , \partial_1(a)= \alpha -\beta -\alpha + \beta=0, \partial_1(b) = \alpha- \gamma - \alpha + \gamma=0$ if we call the 1 cells $\alpha, \beta, \gamma$ and the 2 cells $a,b$. Thus,
+\[H_n(X) = \left\{ \begin{array}{ll} \mathbb{Z} & n = 0\\\mathbb{Z}^3 & n=1\\ \mathbb{Z}^2 & n=2 \\ 0& \mbox{otherwise} \end{array} . \right.\]
+\item Let's split the boundary circle into 2 1 cells, joined at 2 0-simpleces, to form circles. Finally, add two one cells: one from the outside to the first removed disk, and one from the first removed disk to the second. Now we have 2 0-cells 4 1-cells, and 1 2-cell. Call the 0-cells $\alpha$ and $\beta$, and the 1-cells $a,b,c,d$. The boundary of $a$ is $\alpha - \beta$, the boundary of $b$ is $\beta - \alpha$, the boundary of $c$ is $\alpha - \alpha=0$, and the boundary of $d$ is $\beta - \alpha$. The boundary of the 2-cell is $a + b + c - b+d-b -a-d-a-c = -a-b$. Our chain complex is
+\[\mathbb{Z}^2 \stackrel{\partial_0}{\leftarrow} \mathbb{Z}^4 \stackrel{\partial_1}{\leftarrow} \mathbb{Z} \leftarrow 0 \leftarrow \cdots\]
+Where the $\partial$s are given as above.
+Therefore, 
+\[H_n(X) = \left\{ \begin{array}{ll} \mathbb{Z} & n = 0\\ \mathbb{Z}^2 &n= 1\\ 0& \mbox{otherwise} \end{array}. \right.\]
+
+\item To create a CW approximation of this space we use 1 0-cell, 2 1-cells, and 1 2-cell.
+We've got 
+\[\mathbb{Z} \stackrel{\partial_0}{\leftarrow} \mathbb{Z}^2 \stackrel{\partial_1}{\leftarrow} \mathbb{Z} \leftarrow 0 \leftarrow \cdots\]
+and $\partial_1 = 0$. Therefore
+\[H_n(X) = \left\{ \begin{array}{ll} \mathbb{Z} & n = 0,2\\ \mathbb{Z}^2 & n=1 \\ 0& \mbox{otherwise} \end{array} . \right.\]
+\end{enumerate}
+
+\section{Question 10}
+\subsection{Question}
+Let $X$ be the quotient space of $S^2$ under the identification $x \sim -x$ for $x$ in the equator $S^1$. Compute the homology groups $H_i(X)$. Do the same  for $S^3$ with antipodal points of the equatorial $S^2 \subset S^3$ identified.
+\subsection{Answer}
+For the first space we can approximate with 1 0-cell, 1 1-cell, and 2 2-cells. For
+\[\mathbb{Z} \stackrel{\partial_0}{\leftarrow} \mathbb{Z} \stackrel{\partial_1}{\leftarrow} \mathbb{Z}^2 \leftarrow 0 \leftarrow \cdots\]
+we have $\partial_0 =0, \partial_1(a) = \alpha + \alpha =2 \alpha, \partial_1(b) = -\alpha - \alpha = - 2 \alpha$. Hence,
+\[H_n(X) = \left\{ \begin{array}{ll} \mathbb{Z} & n = 2,0 \\ \mathbb{Z}/2\mathbb{Z}& n=1\\ 0&\mbox{otherwise} \end{array} . \right.\]
+
+For the next space, we can get a decomposition with 2 3-cells 1 2-cell, 1 1-cell, and 1 0-cell. For 
+\[\mathbb{Z} \stackrel{\partial_0}{\leftarrow} \mathbb{Z} \stackrel{\partial_1}{\leftarrow} \mathbb{Z}  \stackrel{\partial_2}{\leftarrow} \mathbb{Z}^2 \leftarrow 0 \leftarrow \cdots\]
+we have $\partial_0  = \partial_2=0, \partial_1(a) = 2\alpha $  All of the maps from cells of dimension $\leq 2 $ are from $\mathbb{R}P^2$.  The last map is just $\partial_2 =\pm d_2$ depending on which generator we evaluate on (where $d_2$ is the corresponding map from $\mathbb{R}P^n$). Hence,
+\[H_n(X) = \left\{ \begin{array}{ll} \mathbb{Z} & n = 0\\ \mathbb{Z}/2\mathbb{Z} & n=1 \\ \mathbb{Z}^2 & n=3 \\ 0& \mbox{otherwise} \end{array} . \right.\]
+
+\section{Question 12}
+\subsection{Question}
+Show that the quotient map $S^1 \times S^1 \to S^2$ collapsing the subspace $S^1 \vee S^1$ to a point is not nullhomotopic by showing that it induces an isomorphism on $H_2$. On the other hand, show via covering spaces that any map $S^2 \to S^1 \times S^1$ is nullhomotopic.
+\subsection{Answer}
+Let's approximate $T^2$ by one 0-cell, two 1-cells, and a 2-cell say $x, a,b, f$, and $S^2$ by a 0 cell, and a 2-cell say $x', f'$. The boundary maps for these spaces are $\partial_2(f) = a+b-a-b=0, \partial_1(a) =\partial_1(b) = 0, \partial_2(f')=0, \partial_1=0$. 
+
+We compute $H_2(T^2) = \left< f\right> / 0 = \mathbb{Z}$. The isomorphism induced on $H_2$ is defined by sending $f\mapsto f', 0 \mapsto 0$, and is therefore nontrivial.
+
+Any map $S^2 \to T^2$ lifts to a map on the universal cover of $T^2$, $\mathbb{R}^2$. Since $\mathbb{R}^2$ is contractible, the map is nullhomotopic in the cover, and therefore in the original space.
+
+\section{Question 19}
+\subsection{Question}
+Compute $H_i(\mathbb{R}P^n / \mathbb{R}P^m)$ for $m < n $ by cellular homology, using the standard CW structure on $\mathbb{R}P^n$ with $\mathbb{R}P^m$ as its $m$-skeleton.
+\subsection{Answer}
+This computation is just as in  Example 2.42 ($\mathbb{R}P^n$) except that all members of the chain complex of dimension $i, 0< i \leq m$ are set to 0. The  chain becomes
+\[ 0 \stackrel{0}{\leftarrow} \overbrace{ \underbrace{\mathbb{Z} \stackrel{0}{\leftarrow}  0 \stackrel{0}{\leftarrow}  \cdots \stackrel{0}{\leftarrow}  0 }_{\mbox{dimensions $0$ to $m$}}\stackrel{0}{\leftarrow}  \mathbb{Z} \leftarrow \cdots \leftarrow \mathbb{Z}}^{\mbox{dimensions 0 to $n$}} \stackrel{\mbox{0 or 2}}{\longleftarrow}  0\]
+and we have homology groups
+\[H_i(\mathbb{R}P^n / \mathbb{R}P^m) = \left\{ \begin{array}{ll} \mathbb{Z} & i=0\\ \mathbb{Z} /2 \mathbb{Z}& m+1 = i , i \mbox{ odd} \\ \mathbb{Z}& m+1 = i , i \mbox{ even} \\ \mathbb{Z}/2\mathbb{Z} & m+1< i < n \mbox{ odd}  \\ \mathbb{Z}& i = n \mbox{ odd}\\  0&\mbox{otherwise}\\ \end{array} \right.\]
+
+\section{Question 20}
+\subsection{Question} For finite CW complexes $X$ and $Y$, show that $\chi(X \times Y) = \chi(X) \chi (Y)$.
+\subsection{Answer}
+Let $X \times Y =A$, and denote by $z_i$ the number of $i$-cells in $Z$.
+\begin{align*}
+\chi(X \times Y) &= \chi (A)\\
+&= \sum_i (-1)^i a_i \\
+&= \sum_i (-1)^i \sum_{m+n = i} x_n y_m \\
+&= \sum_n (-1)^n x_n \cdot \sum_m (-1)^m y_m\\
+&= \chi(X) \cdot \chi(Y)
+\end{align*}
+as desired.
+
+\section{Question 21}
+\subsection{Question}
+If a finite CW complex $X$ is the union of subcomplexes $A$ and $B$, show that $\chi(X)= \chi(A) + \chi(B) - \chi(A \cap B)$.
+\subsection{Answer}
+If $a,b,x$ have $a_n,b_n,x_n$ $n$ cells, we observe that $x_n = a_n + b_n - (a \cap b)_n$. Hence, 
+\begin{align*} \chi(X) &= \sum_n(-1)^n x_n\\& = \sum_n(-1)^n a_n +\sum_n(-1)^n b_n - \sum_n(-1)^n (a \cap b)_n \\&= \chi(A) + \chi(B) - \chi(A \cap B)\end{align*}
+as desired. 
+\end{document}

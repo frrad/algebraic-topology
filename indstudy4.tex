@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}
+
+
+
+\usepackage[all]{xy}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{amsmath}
+\pagestyle{fancyplain}
+
+\begin{document}
+
+\lhead{Frederick Robinson}
+\rhead{Independent Study}
+
+
+
+\title{May / AGP}
+\author{Frederick Robinson}
+\date{10 June 2010}
+\maketitle
+
+
+\section*{Aguilar, Gitler and Prieto 5.3}
+\section{Question 11}
+Prove that the canonical inclusion $j : Y \to Z_f$ is a homotopy equivalence satisfying $j \circ f \simeq k $, where $k: X \to Z_f$ is the canonical inclusion induced by $x \mapsto (x,1)$.
+\subsection{Answer}
+
+\section{Question 19}
+Verify the details of the proof of the exactness property. In particular, show that $C_p \simeq \Sigma X^+ $ and that up to precisely this homotopy equivalence, the map $\Sigma A^+ \to C_p$ corresponds to the inclusion.
+\subsection{Answer}
+
+\section{Question 21}
+Construct an alternative proof of the relative exactness axiom (5.3.16) using the long exact homotopy sequence (4.3.41) of the quasifibration $\mathrm{SP }\ Z_i \to \mathrm{SP } C_i$ that is induced by the identification map $Z_i \to C_i$, where $i : A \to X$ is the inclusion.
+\subsection{Answer}
+
+
+\section{Question 22}
+Assume that $X$ is contractible. Prove that
+\[H_q(X,A) \cong H_{q-1}(A) \]
+if $q>1$, and
+\[H_q(X,A) \cong \tilde{H_0} (A).\]
+\subsection{Answer}
+
+\section{Question 23}
+Take $A \subset B \subset X$ and assume that the inclusion $A \hookrightarrow B$ is a homotopy equivalence. Prove that the inclusion of pairs $(X,A) \hookrightarrow (X,B)$ induces an isomorphism
+\[H_q(X,A) \to H_q(X,B)\]
+for all $q$.
+\subsection{Answer}
+
+
+\section{Question 25}
+Prove that if $f : (X,A) \to (Y,B)$ is a weak homotopy equivalence of pairs of topological spaces, then 
+\[f_*: H_q(X,A) \to H_q(Y,B)\]
+is an isomorphism for all $q$. This is the so-called \emph{weak homotopy equivalence axiom}. [\emph{Hint:} See 5.1.35]
+\subsection{Answer}
+Recall that 5.1.35 states
+
+If $\varphi: ( \tilde{X}, \tilde{A}) \to (X,A)$ and $\gamma: ( \tilde{Y}, \tilde{B}) \to (Y,B) $ are $CW$-approximations and $f: (X,A) \to (Y,B)$ is continuous, then there exists a map that is unique up to homotopy, say $\tilde{f}: (\tilde{X}, \tilde{A}) \to (\tilde{Y}, \tilde{B})$, such that the diagram
+\[
+\xymatrix{
+(\tilde{X}, \tilde{A}) \ar@{->}[r]^\varphi \ar@{->}[d]_{\tilde{f}}& (X,A) \ar@{->}[d]^f\\
+(\tilde{Y},\tilde{B}) \ar@{->}[r]^\gamma & (Y,B) \\
+}
+\]
+commutes up to homotopy, namely, $f \circ \varphi \simeq \gamma \circ \tilde{f}$ (by means of a homotopy of pairs).
+
+
+\section{Question 27}
+Prove that the excision axiom for excisive triads is equivalent to the following axiom. Suppose that $(X,A)$ is a pair of spaces and that $U \subset A$ satisfies $\overline{U} \subset \stackrel{\circ}{A}$. Then the inclusion $i: (U -A, A-U) \to (X,A)$ induces an isomorphism $H_n (X - A, A-U) \cong H_n(X,A)$ for each $n \geq 0$.
+\subsection{Answer}
+
+
+\section{Question 32}
+Let $(X,A) = \prod (X_\lambda , A_\lambda)$. Prove that for all $q$.
+\[H_q(X,A) \cong \bigoplus_\lambda H_q(X_\lambda, A_\lambda). \]
+This is the so-called \emph{additivity axiom} for homology.
+\subsection{Answer}
+
+
+\end{document}
